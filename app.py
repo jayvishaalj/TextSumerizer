@@ -17,10 +17,6 @@ def homepage():
 
 @app.route('/home')
 def home():
-    req = request.get_json()
-    userId = req['userId']
-    userType = req['userType']
-    print('User Id  =  '+userId +'   User Type =  ' + userType )
     places = [
         {
             'location' : ['Place1','Place2','Place3']
