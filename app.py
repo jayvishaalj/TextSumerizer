@@ -15,8 +15,22 @@ def homepage():
     <img src="http://loremflickr.com/600/400" />
     """.format(time=the_time)
 
+@app.route('/home',methods=['POST'])
+def home():
+    req = request.get_json()
+    userId = req['userId']
+    userType = req['userType']
+    print('User Id  =  '+userId +'   User Type =  ' + userType )
+    places = [
+        {
+            'location' : ['Place1','Place2','Place3']
+        }
+    ]
+    return jsonify({'places': places})
+
+
 # load model
-model = pickle.load(open('Adventuretrain.pkl','rb'))
+model = pickle.load(open('Amusement_Parks_0.pkl','rb'))
 
 
 adventure ={'P001': 'Sri Chamarajendra Park',
