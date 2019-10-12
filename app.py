@@ -175,11 +175,7 @@ def hello():
             i=i+1
         else:
             break
-
-    locations = {
-        'locations' : finalLocation,
-    }
-    return jsonify({'places': locations})
+    return jsonify({'places': finalLocation})
 
 
 
