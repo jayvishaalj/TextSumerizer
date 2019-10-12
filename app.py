@@ -151,12 +151,9 @@ adventure ={'P001': 'Sri Chamarajendra Park',
  'P216': 'Liquid Bar, Hyatt Centric MG Road Bangalore',
  'P217': 'Deja Vu Restaurant and Bar'}
 
-@app.route('/api/getAdventurePlaces', methods=['POST'])
-def hello():
-    req = request.get_json()
-    userId = req['userId']
-    userType = req['userType']
-    print('User Id  =  '+userId +'   User Type =  ' + userType )
+@app.route('/api/getAdventurePlaces/<userId>')
+def hello(userId):
+    print('User Id  =  '+userId)
     result=[]
     for key in adventure :
         result.append((model.predict(int(userId),key)).est)
