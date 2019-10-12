@@ -17,12 +17,7 @@ def homepage():
 
 @app.route('/home')
 def home():
-    places = [
-        {
-            'location' : ['Place1','Place2','Place3']
-        }
-    ]
-    return jsonify({'places': places})
+    return jsonify({'places': ['Place1','Place2','Place3']})
 
 
 # load model
